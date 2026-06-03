@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Mathdoku</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Light Theme Palette */
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-color: #6366f1;
+            --accent-hover: #4f46e5;
+            --border-color: #e2e8f0;
+            --shadow-color: rgba(99, 102, 241, 0.05);
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --nav-hover: #f1f5f9;
+            --highlight-bg: #fef08a;
+            --highlight-text: #854d0e;
+            --badge-bg: #e0e7ff;
+            --badge-text: #3730a3;
+        }
+        [data-theme="dark"] {
+            /* Dark Theme Palette */
+            --bg-primary: #0b0f19;
+            --bg-secondary: #111827;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #818cf8;
+            --accent-hover: #6366f1;
+            --border-color: #1f2937;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --nav-hover: #1f2937;
+            --highlight-bg: #3f2f0a;
+            --highlight-text: #fef08a;
+            --badge-bg: #1e1b4b;
+            --badge-text: #c7d2fe;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Container Layout */
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+            max-width: 1440px;
+            margin: 0 auto;
+            position: relative;
+        }
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 320px;
+            background-color: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            padding: 2.5rem 2rem;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-y: auto;
+        }
+        .logo-section {
+            margin-bottom: 2.5rem;
+        }
+        .logo-section h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            background: linear-gradient(135deg, var(--accent-color), #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo-section p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+            font-weight: 500;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex-grow: 1;
+        }
+        .nav-links a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+            background-color: var(--nav-hover);
+            transform: translateX(4px);
+        }
+        .nav-links a.active {
+            font-weight: 600;
+            border-left: 3px solid var(--accent-color);
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        /* Main Content Panel */
+        .content-area {
+            flex-grow: 1;
+            padding: 4rem 5rem;
+            max-width: 900px;
+        }
+        .header-meta {
+            margin-bottom: 3.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .last-updated {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: var(--badge-bg);
+            color: var(--badge-text);
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .header-meta h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        .header-meta p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        /* Policy Section Styling */
+        section {
+            margin-bottom: 3.5rem;
+            scroll-margin-top: 2rem;
+        }
+        section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        section h3::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 1.25rem;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+        section p {
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        section ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            padding-left: 0.5rem;
+        }
+        section ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        section ul li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.25rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+        /* Highlight classes for inputs that the user needs to customize */
+        .user-action-required {
+            background-color: var(--highlight-bg);
+            color: var(--highlight-text);
+            padding: 0.15rem 0.35rem;
+            border-radius: 4px;
+            font-weight: 600;
+            border: 1px dashed var(--highlight-text);
+            display: inline-block;
+        }
+        /* Dark/Light Mode Switcher Floating */
+        .controls-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+        .theme-toggle-btn {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 6px -1px var(--shadow-color);
+        }
+        .theme-toggle-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+        /* Third party table styles */
+        .vendor-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        .vendor-table th, .vendor-table td {
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+        .vendor-table th {
+            background-color: var(--nav-hover);
+            font-weight: 600;
+        }
+        .vendor-table a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .vendor-table a:hover {
+            text-decoration: underline;
+        }
+        /* Footer styling */
+        footer {
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-align: center;
+        }
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .app-container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding: 2rem;
+            }
+            .nav-links {
+                display: none; /* Hide side links on tablet/mobile to save space */
+            }
+            .content-area {
+                padding: 2.5rem 2rem;
+            }
+            .controls-container {
+                margin-top: 1rem;
+                padding-top: 1rem;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div>
+            <div class="logo-section">
+                <h1>Mathdoku</h1>
+                <p>Mobile Puzzle Game</p>
+            </div>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#intro" class="active">Introduction</a></li>
+                    <li><a href="#collection">Information Collection</a></li>
+                    <li><a href="#cookies">Log Data & Cookies</a></li>
+                    <li><a href="#providers">Service Providers</a></li>
+                    <li><a href="#user-rights">GDPR & CCPA Rights</a></li>
+                    <li><a href="#coppa">Children's Privacy</a></li>
+                    <li><a href="#retention">Data Deletion</a></li>
+                    <li><a href="#security">Security</a></li>
+                    <li><a href="#changes">Changes to Policy</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="controls-container">
+            <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">
+                <span id="themeIcon">🌙</span> <span id="themeText">Dark Mode</span>
+            </button>
+        </div>
+    </aside>
+    <!-- Main Content Area -->
+    <main class="content-area">
+        <div class="header-meta">
+            <div class="last-updated">Last Updated: June 03, 2026</div>
+            <h2>Privacy Policy</h2>
+            <p>This privacy policy governs your use of the mobile application <strong>Mathdoku</strong> (application identifier: <code>com.mathdoku.light</code>) created by <span class="user-action-required">Tarpara Krish</span>.</p>
+        </div>
+        <!-- Introduction -->
+        <section id="intro">
+            <h3>Introduction</h3>
+            <p>We are committed to protecting and respecting your privacy. This privacy policy explains what information we collect, how we use it, and your options regarding your personal data when you play <strong>Mathdoku</strong>.</p>
+            <p>By downloading, installing, and using the application, you agree to the collection and use of information in accordance with this policy.</p>
+        </section>
+        <!-- Information Collection and Use -->
+        <section id="collection">
+            <h3>Information Collection and Use</h3>
+            <p>For a better experience, while using our Service, we may require you to provide us with certain personally identifiable information. The information that we request will be retained on your device and is not collected by us in any way.</p>
+            <p>However, the application does utilize third-party services that may collect information used to identify you. Specifically, this application uses advertisement SDKs and consent tools to serve advertisements and manage privacy regulations.</p>
+            <p>Permissions requested by the application include:</p>
+            <ul>
+                <li><strong>INTERNET:</strong> Required to fetch puzzle configurations, load advertisements, and retrieve user consent status.</li>
+                <li><strong>ACCESS_NETWORK_STATE:</strong> Required to check if a network connection is active before requesting advertisements or SDK data.</li>
+            </ul>
+        </section>
+        <!-- Log Data and Cookies -->
+        <section id="cookies">
+            <h3>Log Data & Cookies</h3>
+            <p>Whenever you use our Service, in a case of an error in the app we collect data and information (through third-party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.</p>
+            <p>Cookies are files with a small amount of data that are commonly used as anonymous unique identifiers. These are sent to your browser from the websites that you visit and are stored on your device's internal memory. This Service does not use these "cookies" explicitly. However, the app may use third-party code and libraries that use "cookies" to collect information and improve their services.</p>
+        </section>
+        <!-- Service Providers / Third Parties -->
+        <section id="providers">
+            <h3>Third-Party Service Providers</h3>
+            <p>We employ third-party companies and individuals to facilitate our Service, to perform Service-related tasks, or to assist us in analyzing how our Service is used.</p>
+            <p>These third parties have access to your personal information only to perform the tasks assigned to them on our behalf. They are obligated not to disclose or use the information for any other purpose.</p>
+            <p>Here are links to the privacy policies of the third-party service providers used by the app:</p>
+            
+            <table class="vendor-table">
+                <thead>
+                    <tr>
+                        <th>Provider Name</th>
+                        <th>Purpose</th>
+                        <th>Privacy Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Google Play Services</td>
+                        <td>Core Android platform utilities and authentication</td>
+                        <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></td>
+                    </tr>
+                    <tr>
+                        <td>Google AdMob</td>
+                        <td>In-app advertising (banner and rewarded ads)</td>
+                        <td><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob Policies & Privacy</a></td>
+                    </tr>
+                    <tr>
+                        <td>Google User Messaging Platform (UMP)</td>
+                        <td>GDPR / CCPA privacy consent dialog and management</td>
+                        <td><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google Partner Technologies</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- GDPR and CCPA User Rights -->
+        <section id="user-rights">
+            <h3>GDPR & CCPA/CPRA Rights</h3>
+            <p>If you reside in the European Economic Area (EEA), United Kingdom, or California, you have specific data protection rights under regulations such as the General Data Protection Regulation (GDPR) and California Consumer Privacy Act (CCPA):</p>
+            <ul>
+                <li><strong>The right to access:</strong> You have the right to request copies of your personal data.</li>
+                <li><strong>The right to rectification:</strong> You have the right to request that we correct any information you believe is inaccurate.</li>
+                <li><strong>The right to erasure ("Right to be Forgotten"):</strong> You have the right to request that we erase your personal data under certain conditions.</li>
+                <li><strong>The right to opt-out of ad personalization:</strong> You can configure your choices in the in-game consent settings or revoke your consent at any time.</li>
+            </ul>
+            <p>In Mathdoku, you can manage your preferences or change your consent choices at any time by going to the <strong>Settings</strong> screen in the game and choosing to adjust your Privacy Consent Settings. This will re-trigger the Google User Messaging Platform (UMP) dialog.</p>
+        </section>
+        <!-- Children's Privacy -->
+        <section id="coppa">
+            <h3>Children's Privacy (COPPA)</h3>
+            <p>These Services do not address anyone under the age of 13 (or under the age of 16 in the EEA). We do not knowingly collect personally identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to take necessary actions.</p>
+        </section>
+        <!-- Data Retention and Deletion -->
+        <section id="retention">
+            <h3>Data Retention & Deletion Policy</h3>
+            <p>Since Mathdoku is a fully offline-first game, we do not host or store your game data or personal details on any external databases or cloud servers. All level progression and setting choices are stored strictly locally on your own device's internal memory (via Android SharedPreferences/DataStore).</p>
+            <p><strong>To completely delete your local game data:</strong> You can go to your Android device settings, select <em>Apps > Mathdoku > Storage</em>, and click <strong>Clear Storage/Data</strong>. This will permanently wipe all local save states, settings, and progress from your device.</p>
+            <p>If you have contacted us via email or submitted a feedback form, we may retain your correspondence details. To request the deletion of any email correspondence records, please email us directly at <span class="user-action-required">[Your Contact Email Address]</span> and we will clear it within 30 days.</p>
+        </section>
+        <!-- Security -->
+        <section id="security">
+            <h3>Security of Data</h3>
+            <p>We value your trust in providing us your personal information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.</p>
+        </section>
+        <!-- Changes to Privacy Policy -->
+        <section id="changes">
+            <h3>Changes to This Privacy Policy</h3>
+            <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted on this page.</p>
+        </section>
+        <!-- Contact Us -->
+        <section id="contact">
+            <h3>Contact Us</h3>
+            <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at:</p>
+            <ul>
+                <li><strong>Developer/Publisher:</strong> <span class="user-action-required">Tarpara Krish</span></li>
+                <li><strong>Support Email:</strong> <span class="user-action-required">neuraldevarc@gmail.com</span></li>
+            </ul>
+        </section>
+        <footer>
+            <p>&copy; 2026 Mathdoku. All rights reserved.</p>
+        </footer>
+    </main>
+</div>
+<script>
+    // Theme toggle function
+    function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const themeBtn = document.getElementById('themeBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const themeText = document.getElementById('themeText');
+        
+        if (currentTheme === 'dark') {
+            document.documentElement.removeAttribute('data-theme');
+            themeIcon.innerText = '🌙';
+            themeText.innerText = 'Dark Mode';
+            localStorage.setItem('theme', 'light');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.innerText = '☀️';
+            themeText.innerText = 'Light Mode';
+            localStorage.setItem('theme', 'dark');
+        }
+    }
+    // Persist user theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.getElementById('themeIcon').innerText = '☀️';
+        document.getElementById('themeText').innerText = 'Light Mode';
+    }
+    // Interactive Sidebar Scroll Highlight
+    const sections = document.querySelectorAll('section');
+    const navAnchorTags = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 150)) {
+                current = section.getAttribute('id');
+            }
+        });
+        navAnchorTags.forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('href') === `#${current}`) {
+                a.classList.add('active');
+            }
+        });
+    });
+</script>
+</body>
+</html>
